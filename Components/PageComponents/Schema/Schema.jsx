@@ -1,6 +1,7 @@
 import * as yup from "yup";
 export const Schema = yup.object().shape({
-  email: yup.string().email().required("email is required !"),
-  fullname: yup.string().matches(/^[A-z]+$/ , 'Is not in correct format').required("Your Name is empty!"),
-  password: yup.string().required("password is required !"),
+  title: yup.string().required("title is required !"),
+  subTitle: yup.string().matches(/^[A-z]+$/ , 'Is not in correct format').required("Sub Title is empty!"),
+  paragraph: yup.string().required("paragraph is required !"),
+  // image: yup.string().required("Image File is required !"),
 });

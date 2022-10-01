@@ -1,28 +1,53 @@
+import {
+  BiHome,
+  BiCategory,
+  BiFile,
+  BiTable,
+  BiMessageRoundedError,
+} from "react-icons/bi";
 export const NavData = [
   {
+    icon: <BiHome />,
     title: "HOME",
     path: "/Home/Home",
   },
-  { title: "DASHBOARD", path: "/Table" },
-  { title: "FORM", path: "/Form" },
+  {
+    icon: <BiTable />,
+    title: "DASHBOARD",
+    path: "/Table",
+  },
+  {
+    icon: <BiFile />,
+    title: "FORM",
+    path: "/Form",
+  },
 
   {
+    icon: <BiCategory />,
     title: "CATEGORY",
+    pis: "category",
     submenu: [
       {
         title: "WEB DESIGN",
-        path: "web-design",
+        id: "category",
+        path: "/web-design?from=category",
       },
       {
         title: "WEB DEVELOPMENT",
-        path: "web-dev",
+        id: "category",
+        path: "/web-dev?from=category",
       },
       {
         title: "SEO",
-        path: "seo",
+        id: "category",
+        path: "/seo?from=category",
       },
     ],
-    path: "",
+    // path: "",
   },
-  { title: "ABOUT", path: "/About" },
+  {
+    icon: <BiMessageRoundedError />,
+    title: "ABOUT",
+    path: "/About",
+  },
 ];

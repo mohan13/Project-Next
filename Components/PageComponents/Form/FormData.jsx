@@ -1,17 +1,22 @@
 export const FormData =[
     {
-        label:'Full Name',
+        label:'Title',
         type:'text',
-        name:'fullname'
+        name:'title'
     },
     {
-        label:'Email',
-        type:'email',
-        name:'email'
+        label:'Sub Title',
+        type:'text',
+        name:'subTitle'
     },
     {
-        label:'Password',
+        label:'Image',
+        type:'File',
+        name:'image'
+    },
+    {
+        label:'Paragraph',
         type:'text',
-        name:'password'
+        name:'paragraph'
     }
 ]

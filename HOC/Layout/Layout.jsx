@@ -5,12 +5,12 @@ import Toolbar from "../../Components/Navigation/Toolbar";
 const Layout = ({ children }) => {
   return (
     <div
-      className="grid grid-cols-5"
+      className="flex"
     >
-      <div className=" w-full h-screen border-r-2 ">
+      <div className=" h-screen border-r-2  ">
         <Toolbar />
       </div>
-      <div className=" col-span-4">{children}</div>
+      <div className="w-full">{children}</div>
     </div>
   );
 };

@@ -2,22 +2,33 @@ import React from "react";
 import { Schema } from "../Schema/Schema";
 import { FormData } from "./FormData";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-const Form1 = () => {
+const Form1 = ({ context }) => {
   return (
-    <div>
+    <div className="lg:w-5/6 md:w-4/5 mx-auto">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font my-4 text-gray-900">
+        Contact Us
+      </h1>
       <Formik
         initialValues={{
-          username: "",
-          email: "",
+          title: "",
+          subTitle: "",
+          paragraph: "",
+          image: "",
+        }}
+        onSubmit={async (values, { resetForm }) => {
+          alert("Sucessfull !");
+          console.log(values);
+          await onSubmit(values);
+          resetForm();
         }}
         validationSchema={Schema}
-        render={({ errors, touched, handleSubmit }) => {
+        render={({ handleSubmit }) => {
           return (
-            <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:m-auto w-full md:py-8 mt-8 md:mt-0">
-              <h2 class="text-gray-900  text-lg mb-1 font-medium title-font">
-                Feedback
-              </h2>
-              <Form onSubmit={handleSubmit}>
+            <div className=" bg-white flex flex-col md:m-auto w-full md:py-8 mt-8 md:mt-0">
+              <Form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-2 border p-4 gap-8"
+              >
                 {FormData?.map((val, i) => {
                   return (
                     <div key={i}>
@@ -37,7 +48,10 @@ const Form1 = () => {
                     </div>
                   );
                 })}
-                <button class="mt-4 text-ButtonText bg-Button border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <button
+                  type="submit"
+                  class="flex mr-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
                   Submit
                 </button>
               </Form>
