@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { MdDelete, MdModeEditOutline } from "react-icons/md";
 import { AppContext } from "../../../Context/context";
 import { TableData } from "./TData";
 const Index = ({ Context }) => {
@@ -6,35 +7,41 @@ const Index = ({ Context }) => {
   const Remove = () => {
     alert("deleted");
   };
+  const Edit = () => {
+    alert("Let's Edit");
+  };
   return (
     <div class="text-gray-600 body-font">
-      <div className="px-5 mx-auto text-center bg-white whitespace-no-wrap ">
+      <div className=" overflow-auto px-2 md:px-5 mx-auto text-center bg-white whitespace-no-wrap ">
         {TableData?.map((val, i) => {
           return (
             <div
               key={i}
-              className={`grid grid-cols-6 gap-4 items-center border-b-2 px-4 py-3 border-gray-200 font-medium text-gray-900 text-sm  ${
-                i === 0 ? " bg-gray-100" : ""
-              }`}
+              className="w-full text-center gap-2 grid grid-cols-8 md:grid-cols-6 items-center border-b-2 border-gray-200 font-medium  text-gray-900 text-sm md:text-md md:p-2"
             >
-              <div class="px-4 ">{val.sn}</div>
-              <div class="px-4 ">{val.plan}</div>
-              <div class="px-4 ">{val.speed}</div>
-              <div class="px-4 ">{val.storage}</div>
-              <div class="px-4 ">{val.price}</div>
-              <div class="px-4 ">
-                <div>{val.Edit}</div>
+              <div>{val.sn}</div>
+              <div>{val.plan}</div>
+              <div className="col-span-2 md:col-auto ">{val.speed}</div>
+              <div>{val.storage}</div>
+              <div className="col-span-2 md:col-auto">{val.price}</div>
+              <div>
+                {val.Edit}
                 <div
-                  className={`flex gap-4 justify-center  ${i === 0 ? "hidden" : ""}`}
+                  className={`flex md:-flex-col justify-center gap-1 ${
+                    i === 0 ? "hidden" : ""
+                  }`}
                 >
                   <div
                     onClick={Remove}
-                    className="cursor-pointer border transition duration-300 ease-in-out border-red-600 bg-white text-red-600  hover:text-white py-1 px-2  hover:bg-red-600 "
+                    className="cursor-pointe p-1 border transition duration-300 ease-in-out border-red-600 bg-white text-red-600  hover:text-white  hover:bg-red-600 "
                   >
-                    Delete
+                    <MdDelete />
                   </div>
-                  <div className="cursor-pointer border transition duration-300 ease-in-out  border-blue-600 bg-white text-blue-600  hover:text-white py-1 px-2  hover:bg-blue-600">
-                    Edit
+                  <div
+                    onClick={Edit}
+                    className="cursor-pointer p-1 border transition duration-300 ease-in-out  border-blue-600 bg-white text-blue-600  hover:text-white hover:bg-blue-600"
+                  >
+                    <MdModeEditOutline />
                   </div>
                 </div>
               </div>

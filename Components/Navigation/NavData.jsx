@@ -7,23 +7,23 @@ import {
 } from "react-icons/bi";
 export const NavData = [
   {
-    icon: <BiHome />,
+    icon: <BiHome className="w-full h-full" />,
     title: "HOME",
     path: "/Home/Home",
   },
   {
-    icon: <BiTable />,
+    icon: <BiTable className="w-full h-full" />,
     title: "DASHBOARD",
     path: "/Table",
   },
   {
-    icon: <BiFile />,
+    icon: <BiFile className="w-full h-full" />,
     title: "FORM",
     path: "/Form",
   },
 
   {
-    icon: <BiCategory />,
+    icon: <BiCategory className="w-full h-full" />,
     title: "CATEGORY",
     pis: "category",
     submenu: [
@@ -46,7 +46,7 @@ export const NavData = [
     // path: "",
   },
   {
-    icon: <BiMessageRoundedError />,
+    icon: <BiMessageRoundedError className="w-full h-full" />,
     title: "ABOUT",
     path: "/About",
   },
